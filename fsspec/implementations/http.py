@@ -17,7 +17,7 @@ ex2 = re.compile(r"""(http[s]?://[-a-zA-Z0-9@:%_+.~#?&/=]+)""")
 
 
 async def get_client():
-    return aiohttp.ClientSession()
+    return aiohttp.ClientSession(headers={'Connection': 'keep-alive'})
 
 
 class HTTPFileSystem(AsyncFileSystem):
